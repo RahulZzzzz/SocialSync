@@ -8,16 +8,18 @@ function SocialSignin() {
 
 
     const url = window.location.href;
+    // const home = window.location.protocol+"//"+window.location.hostname;
+    const url1 = url.replace("/login","");
     const dispatch = useDispatch();
 
     
 
-    const googleAuth = async(e)=>{
+    const googleAuth = (e)=>{
         e.preventDefault();
 
-        const res = await account.createOAuth2Session(
+        const res = account.createOAuth2Session(
             'google',
-            `${url}`,
+            `${url1}`,
             `${url}`
         )
         // .finally(async()=>{
