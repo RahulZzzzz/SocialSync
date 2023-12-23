@@ -9,18 +9,18 @@ function SocialSignin() {
 
     const url = window.location.href;
     // const home = window.location.protocol+"//"+window.location.hostname;
-    const url1 = url.replace("/login","");
+    // const url1 = url.replace("/login","");
     const dispatch = useDispatch();
 
-    
+    const url2 = (window.location.hostname=="localhost") ? window.location.href : "https://social-sync-red.vercel.app/" 
 
     const googleAuth = (e)=>{
         e.preventDefault();
 
         const res = account.createOAuth2Session(
             'google',
-            `${url1}`,
-            `${url}`
+            url2,
+            url
         )
         // .finally(async()=>{
         //     const userData = await authService.getCurrentUser();
