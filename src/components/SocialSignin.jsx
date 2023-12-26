@@ -37,10 +37,10 @@ function SocialSignin() {
     }
 
   return (
-    <div className=' mx-auto flex flex-wrap justify-center w-[30%] gap-2 mb-3'>
+    <div className=' mx-auto flex flex-wrap justify-center gap-2 mb-3'>
         <button
          onClick={(e)=>{googleAuth(e)}}
-         className=' flex border-2 border-neutral-100 max-w-[200px]'
+         className=' flex border-2 border-neutral-100'
         >
             <div className=' border-r-2 border-neutral-900 max-w-[45px]'>
                 <img src={google} alt="" />

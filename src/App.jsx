@@ -15,6 +15,7 @@ import { useSelector } from 'react-redux';
 import {Middle} from "./components/index"
 import LoadingBar from 'react-top-loading-bar';
 import { LoaderProvider, useLoader } from './context/LoaderProvider';
+import Done from './components/Done';
 
 
 function App() {
@@ -52,6 +53,7 @@ function App() {
         onLoaderFinished={() => setProgress(0)}
       />
       <div>
+        <Done text="Login Successfully"/>
         <Header/>
         {/* dont forget to remove thne height*/ }
         <main >

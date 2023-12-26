@@ -6,7 +6,6 @@ import authService from '../appwrite/auth'
 import { useDispatch,useSelector } from 'react-redux'
 import { login as authLogin } from '../store/authSlice'
 import { useLoader } from '../context/LoaderProvider'
-import Done from './Done'
 import { useDone } from '../context/DoneProvider'
 
 function Login() {
@@ -30,9 +29,7 @@ function Login() {
       const session = await authService.login(data).finally(()=>{
         setProgress(100);
         setDone(true);
-        setTimeout(()=>{
-          setDone(false);
-        },2000)
+        
       });
       if(session){
         const userData = await authService.getCurrentUser();
@@ -50,8 +47,6 @@ function Login() {
 
   return (
     <div className=' relative overflow-hidden'>
-
-        <Done text="Login Successfully"/>
         <div className=' flex flex-col gap-2'>
 
           <div className=' mt-4 mb-2'>

@@ -6,7 +6,6 @@ import {Button, Input, Logo, SocialSignin} from './index.js'
 import {useDispatch} from 'react-redux'
 import {useForm} from 'react-hook-form'
 import { useLoader } from '../context/LoaderProvider.jsx'
-import Done from './Done.jsx'
 import { useDone } from '../context/DoneProvider.jsx'
 
 
@@ -33,9 +32,6 @@ function Signup() {
             const userData = await authService.createAccount(data).finally(()=>{
                 setProgress(100);
                 setDone(true);
-                setTimeout(()=>{
-                  setDone(false);
-                },2000)
               });
             if(userData){
                 const userData = await authService.getCurrentUser()
@@ -49,7 +45,6 @@ function Signup() {
 
   return (
     <div className=' relative overflow-hidden'>
-        <Done text = "Account Created Successfully"/>
         <div className=' flex flex-col gap-2'>
 
             <div className=' mt-4 mb-2'>
